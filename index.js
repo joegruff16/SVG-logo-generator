@@ -1,7 +1,7 @@
 // Include packages to use in project
 const inquirer = require("inquire");
 
-// Set a list of prompts to to help the user generate text, shapes, and color of the shapes
+// Set a list of prompts to to help the user to selecct a color and shape, provide text for the logo and save the generated SVG to a svg file
 // Boiler plate code that can be adjusted
 inquirer
   .prompt([
@@ -18,7 +18,7 @@ inquirer
       // Other errors
     }
   });
-// Use the write file function and path to generate a the shapes in a specified location the file should be named logo.svg
+// Use the write file function and path to generate in a specified file location a file named logo.svg
 
 // fs.writeFile(fileName, data)
 // const fileName = 'logo.svg';
