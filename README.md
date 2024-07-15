@@ -4,7 +4,7 @@
 
 ## Usage
 
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
@@ -15,6 +15,9 @@
 [![Apache2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Credits
+
+- Used this MDN docs example to create each logo example
+  - **<https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started>**
 
 ## Video Walkthrough Link
 
