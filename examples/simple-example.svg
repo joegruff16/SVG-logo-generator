@@ -1,0 +1,11 @@
+<svg version="1.1"
+    width="300" height="200"
+    xmlns:xlink="http://www.w3.org/2000/svg">
+
+<!-- This is the red rectangle background of the logo which is created with rect -->
+    <rect width="100%" height="100%" fill="red" />
+<!-- This is the circle portion of the logo that is created with circle -->
+    <circle cx="150" cy="100" r="80" fill="green" />
+<!-- This is the text inside of the logo which is created using text -->
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+</svg>
