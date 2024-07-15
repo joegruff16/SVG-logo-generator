@@ -1,0 +1,6 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <polygon height="100%" width="100%" points="180, 10 10, 10 90, 180" fill="red" />
+    <text x="95" y="90" font-size="40" text-anchor="middle" fill="black">
+        RAD
+    </text>
+</svg>
