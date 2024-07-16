@@ -2,8 +2,8 @@
 const inquirer = require("inquirer");
 
 // Set a list of prompts to to help the user to selecct a color and shape, provide text for the logo and save the generated SVG to a svg file
-// Below using inquier I will prompt the user asking them what they want to do
 const start = async () => {
+  // Below is what will display in the CLI to prompt the user.
   await inquirer
     // This will prompt the user in the CLI displaying all possibilities for logo customization
     .prompt([
@@ -41,22 +41,29 @@ const start = async () => {
 
 start();
 
+async function addShape() {
+  // I can use a try catch to catch any errors within this function
+  // There needs to be a way to retrieve each shape example file when a user makes a selection of the shape they want to use
+  // It must be a file system method like a combo of read and write file
+}
+
 // Ths can be rinsed and reused in each functions logic if necessary
-// inquirer
-//   .prompt([
-//     // Pass prompts or questions here
-//   ])
-//   .then((answers) => {
-//     // any feedback validate answers
-//   })
-//   .catch((error) => {
-//     // Catch used to catch errors in code
-//     if (error) {
-//       // Prompt couldn't rendered
-//     } else {
-//       // Other errors
-//     }
-//   });
+//  Begin writing logic for the app
+inquirer
+  .prompt([
+    // Pass prompts or questions here
+  ])
+  .then((answers) => {
+    // any feedback validate answers
+  })
+  .catch((error) => {
+    // Catch used to catch errors in code
+    if (error) {
+      // Prompt couldn't rendered
+    } else {
+      // Other errors
+    }
+  });
 // Use the write file function and path to generate in a specified file location a file named logo.svg
 
 // fs.writeFile(fileName, data)
