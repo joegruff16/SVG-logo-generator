@@ -1,10 +1,21 @@
 {
   "dependencies": {
-    "inquirer": "^9.2.21",
+    "inquirer": "^8.2.6",
     "jest": "^29.7.0"
   },
   "scripts": {
-    "start": "node index js",
+    "start": "node index.js",
     "test": "jest"
-  }
+  },
+  "name": "svg-logo-generator",
+  "description": "This is a CLI app that will prompt users to help them design their own svg logos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "CLI",
+    "node.js",
+    "inquirer"
+  ],
+  "author": "Joseph Ruff",
+  "license": "Apache-2.0"
 }
