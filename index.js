@@ -15,6 +15,7 @@ const start = async () => {
           "Add a shape",
           "Select a color",
           "Add logo text",
+          "Add logo text color",
           "Exit", // Exit will become it's on function and not a while loop
         ],
       },
@@ -33,7 +34,7 @@ const start = async () => {
           addText();
           break;
         case "Exit":
-          exit(); // create a function with pool.end
+          exit();
           break;
       }
     });
@@ -47,6 +48,24 @@ async function addShape() {
   // It must be a file system method like a combo of read and write file
 }
 
+async function selectColor() {}
+
+async function addText() {
+  // We need to create a function that will enable a user when they prompt the logo text it will go within the <text> portion of the svg logo
+  inquirer
+    .prompt([
+      {
+        name: "addText",
+        type: "input",
+        message: "Please enter at least 3 characters of text for your logo?",
+      },
+    ])
+    .then((response) => {
+      console.log(response);
+      // We will need a if statement to explain how if 3 characters aren't selected it will throw an error
+      // Then I believe we will need the fs writeFile method so that the text will get written on the logo file
+    });
+}
 // Ths can be rinsed and reused in each functions logic if necessary
 //  Begin writing logic for the app
 inquirer
