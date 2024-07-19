@@ -1,23 +1,40 @@
+// Import classes to leverage for app logic
+const SVG = require("./lib/svg");
+const Shape = require("./lib/shapes");
 // Include packages to use in project
 const inquirer = require("inquirer");
 
 // Set a list of prompts to to help the user to selecct a color and shape, provide text for the logo and save the generated SVG to a svg file
 const start = async () => {
   // Below is what will display in the CLI to prompt the user.
+  console.log(start);
   await inquirer
-    // This will prompt the user in the CLI displaying all possibilities for logo customization
     .prompt([
       {
-        name: "choice",
+        name: "Add a shape",
         type: "list",
-        message: "Please make a selection to customize your logo",
+        message: "Pick a shape for your logo",
         choices: [
-          "Add a shape",
-          "Select a color",
-          "Add logo text",
-          "Add logo text color",
+          "Circle",
+          "Rectangle",
+          "Triangle",
           "Exit", // Exit will become it's on function and not a while loop
         ],
+      },
+      {
+        name: "Shape color",
+        type: "input",
+        message: "Enter a color with at least 3 characters",
+      },
+      {
+        name: "Logo text",
+        type: "input",
+        message: "Enter text for your logo with at least 3 characters",
+      },
+      {
+        name: "Text color",
+        type: "input",
+        message: "Enter a color with at least 3 characters",
       },
     ])
     .then(async (response) => {
@@ -25,14 +42,16 @@ const start = async () => {
       // This switch statement will allow the user to select an option and then execute the function that corresponds to that option
       switch (response.choice) {
         case "Add a shape":
-          addShape();
+          generateShape();
           break; // If you don't include a break it might execute another function or throw an error
-        case "Select a color":
-          selectColor();
+        case "Shape color":
+          Shape();
           break;
-        case "Add logo text":
-          addText();
+        case "Logo text":
+          // addText();
           break;
+        case "Text color":
+          SVG();
         case "Exit":
           exit();
           break;
@@ -40,49 +59,23 @@ const start = async () => {
     });
 };
 
+function generateShape(options) {
+  let svg = "";
+
+  switch (options.shape) {
+    case "Circle":
+      svg = `<circle cx="150" cy="100" r="100" />`;
+      break;
+    case "Rectangle":
+      svg = `<rect x="50" height="200" width="200" />`;
+      break;
+    case "Triangle":
+      svg = `<polygon height="100%" width="100%" points="180, 10 10, 10 90, 180" />`;
+  }
+}
+
 start();
 
-async function addShape() {
-  // I can use a try catch to catch any errors within this function
-  // There needs to be a way to retrieve each shape example file when a user makes a selection of the shape they want to use
-  // It must be a file system method like a combo of read and write file
-}
-
-async function selectColor() {}
-
-async function addText() {
-  // We need to create a function that will enable a user when they prompt the logo text it will go within the <text> portion of the svg logo
-  inquirer
-    .prompt([
-      {
-        name: "addText",
-        type: "input",
-        message: "Please enter at least 3 characters of text for your logo?",
-      },
-    ])
-    .then((response) => {
-      console.log(response);
-      // We will need a if statement to explain how if 3 characters aren't selected it will throw an error
-      // Then I believe we will need the fs writeFile method so that the text will get written on the logo file
-    });
-}
-// Ths can be rinsed and reused in each functions logic if necessary
-//  Begin writing logic for the app
-inquirer
-  .prompt([
-    // Pass prompts or questions here
-  ])
-  .then((answers) => {
-    // any feedback validate answers
-  })
-  .catch((error) => {
-    // Catch used to catch errors in code
-    if (error) {
-      // Prompt couldn't rendered
-    } else {
-      // Other errors
-    }
-  });
 // Use the write file function and path to generate in a specified file location a file named logo.svg
 
 // fs.writeFile(fileName, data)
