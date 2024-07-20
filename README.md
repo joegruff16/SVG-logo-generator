@@ -27,6 +27,8 @@ This is a command line prompt app that allows a user to generate their own logo 
 
 ## Video Walkthrough Link
 
+<https://drive.google.com/file/d/1bsE4KZ1OXZH6EfpZ_j824C5lUeVVUONn/view?usp=sharing>
+
 ## GitHub Repo
 
 <https://github.com/joegruff16/SVG-logo-generator>
