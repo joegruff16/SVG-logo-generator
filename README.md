@@ -12,6 +12,10 @@ This is a command line prompt app that allows a user to generate their own logo 
 
 ## Screenshots and Finished Product
 
+![FinishedProduct](./images/finished_product.png)
+
+![FinishedLogo](./examples/created_example.png)
+
 ## License
 
 [![Apache2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)

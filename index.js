@@ -24,7 +24,7 @@ const start = async () => {
       validate: (input) => input.length >= 3,
     },
     {
-      name: "logoText",
+      name: "text",
       type: "input",
       message: "Enter text for your logo with at least 3 characters",
       validate: (input) => input.length >= 3,
@@ -39,7 +39,7 @@ const start = async () => {
 
   function generateShape(options) {
     let svgHeader = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
-    let svgFooter = `</svg`;
+    let svgFooter = `</svg>`;
     let shapeSVG = "";
 
     if (!["Circle", "Rectangle", "Triangle"].includes(options.shape)) {
@@ -61,7 +61,10 @@ const start = async () => {
     }
 
     // Add text for SVG
-    let textSVG = `<text x="150" y="115" font-size="50" text-anchor="middle" fill="${color}">`;
+    let textSVG = `<text x="150" y="115" font-size="50" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>`;
+    // Combine everything to form the complete svg file
+    let svgContent = `${svgHeader}${shapeSVG}${textSVG}${svgFooter}`;
+    return svgContent;
   }
 
   // Invoke generateShape
